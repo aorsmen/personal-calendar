@@ -1,37 +1,58 @@
+import { useRef } from "react";
+import dayjs, { Dayjs } from "dayjs";
 import { Stack, Box } from "@mui/material";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import gbLocale from "@fullcalendar/core/locales/en-gb";
 import type { DateClickArg } from "@fullcalendar/interaction";
 import Sidebar from "../Sidebar";
 import useCalendar from "../../../hooks/useCalendar";
 import { v7 } from "uuid";
 
 const CalendarMain = () => {
-  const { setActiveEvent } = useCalendar();
+  const { setActiveEvent, events } = useCalendar();
+  const currentTime = useRef<Dayjs>(null);
 
   return (
     <Stack direction="row">
       <Box sx={{ flex: 1 }}>
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
-          locale={gbLocale}
           firstDay={1}
           initialView="dayGridMonth"
-          editable={true}
-          selectable={true}
-          selectMirror={true}
+          events={events}
+          eventTimeFormat={{
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          }}
           eventClick={() => console.log("CLICK EVENT")}
-          eventAdd={() => console.log("ADD EVENT")}
           dateClick={(arg: DateClickArg) => {
-            setActiveEvent({ id: v7(), start: arg.date });
+            currentTime.current = dayjs();
+            const argDate = dayjs(arg.date);
+            const str = argDate
+              .set("hour", currentTime.current.hour())
+              .set("minute", currentTime.current.minute());
+            const end = argDate
+              .set("hour", currentTime.current.hour())
+              .set("minute", currentTime.current.minute() + 1);
+            setActiveEvent({
+              id: v7(),
+              start: str.toDate(),
+              end: end.toDate(),
+            });
           }}
           customButtons={{
             addEventButton: {
               text: "Add Event",
               click: () => {
-                setActiveEvent({ id: v7() });
+                currentTime.current = dayjs();
+                const end = currentTime.current.add(1, "minute");
+                setActiveEvent({
+                  id: v7(),
+                  start: currentTime.current.toDate(),
+                  end: end.toDate(),
+                });
               },
             },
           }}

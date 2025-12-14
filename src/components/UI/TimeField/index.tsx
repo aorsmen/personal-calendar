@@ -1,15 +1,19 @@
 import { TimePicker } from "@mui/x-date-pickers";
 import type { PickerValue } from "@mui/x-date-pickers/internals";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
 const TimeField = ({
   label,
   time,
   onChange,
+  minTime,
+  maxTime,
 }: {
   label: string;
-  time: string | undefined;
+  time: Dayjs;
   onChange: (value: PickerValue) => void;
+  minTime?: Dayjs | undefined;
+  maxTime?: Dayjs | undefined;
 }) => {
   const formTime = dayjs(time);
   return (
@@ -24,6 +28,9 @@ const TimeField = ({
       label={label}
       defaultValue={formTime}
       onAccept={onChange}
+      ampm={false}
+      minTime={minTime}
+      maxTime={maxTime}
     />
   );
 };

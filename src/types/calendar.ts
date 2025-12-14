@@ -1,3 +1,5 @@
+import { Dayjs } from "dayjs";
+
 export type CalendarEventType = {
   id?: string;
   title?: string;
@@ -5,8 +7,8 @@ export type CalendarEventType = {
   start?: Date;
   end?: Date;
   allDay?: boolean;
-  startTime?: string;
-  endTime?: string;
+  startTime?: Dayjs | null;
+  endTime?: Dayjs | null;
   startRecur?: Date;
   endRecur?: Date;
   daysOfWeek?: number[];

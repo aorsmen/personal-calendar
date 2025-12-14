@@ -35,7 +35,7 @@ const Sidebar = () => {
           }
         />
         <CardContent sx={{ borderTop: "1px solid #dddddd" }}>
-          <EventForm />
+          <EventForm data={activeEvent} />
         </CardContent>
       </Card>
     </Box>
