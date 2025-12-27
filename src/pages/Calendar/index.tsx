@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import CalendarMain from "../../components/Calendar/CalendarMain";
 import CalendarActions from "../../context/CalendarActions";
 
-function CalendarPage() {
+function Calendar() {
   return (
     <Box sx={{ padding: "16px" }}>
       <CalendarActions>
@@ -12,4 +12,4 @@ function CalendarPage() {
   );
 }
 
-export default CalendarPage;
+export default Calendar;

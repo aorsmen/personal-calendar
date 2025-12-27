@@ -14,14 +14,23 @@ export type CalendarEventType = {
   daysOfWeek?: number[];
 };
 
+export type ActiveEventType = {
+  event: CalendarEventType;
+  isEditing: boolean;
+};
+
 export type CalendarCtxType = {
   events: CalendarEventType[];
-  activeEvent: CalendarEventType | null;
-  addEvent: (event: CalendarEventType) => void;
+  activeEvent: ActiveEventType | null;
   updateEvent: (event: CalendarEventType) => void;
   deleteEvent: (id: string) => void;
-  setActiveEvent: React.Dispatch<
-    React.SetStateAction<CalendarEventType | null>
-  >;
+  setActiveEvent: (
+    event: CalendarEventType | null,
+    isEditing?: boolean
+  ) => void;
   getEvent: (id: string) => CalendarEventType | null;
+};
+
+export type CalendarEventsResponse = {
+  events: CalendarEventType[];
 };

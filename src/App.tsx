@@ -4,7 +4,10 @@ import ThemeModeProvider from "./context/ThemeModeProvider";
 
 // Route Imports
 const Home = lazy(() => import("./pages/Home"));
-const CalendarPage = lazy(() => import("./pages/CalendarPage"));
+const Calendar = lazy(() => import("./pages/Calendar"));
+const Notes = lazy(() => import("./pages/Notes"));
+const ToDoList = lazy(() => import("./pages/ToDoList"));
+const Upcomings = lazy(() => import("./pages/Upcomings"));
 
 function App() {
   return (
@@ -12,7 +15,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="calendar" element={<CalendarPage />} />
+          <Route path="calendar" element={<Calendar />} />
+          <Route path="notes" element={<Notes />} />
+          <Route path="to-do-list" element={<ToDoList />} />
+          <Route path="upcomings" element={<Upcomings />} />
         </Routes>
       </BrowserRouter>
     </ThemeModeProvider>

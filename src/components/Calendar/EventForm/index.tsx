@@ -20,14 +20,14 @@ import type React from "react";
 import type { CalendarEventType } from "../../../types/calendar";
 
 const EventForm = ({ data }: { data: CalendarEventType }) => {
-  const { setActiveEvent, addEvent } = useCalendar();
+  const { setActiveEvent, updateEvent } = useCalendar();
   const [currentEvent, setCurrentEvent] = useState(data);
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
     if (currentEvent?.title && currentEvent?.start && currentEvent?.end) {
-      addEvent(currentEvent);
+      updateEvent(currentEvent);
       setActiveEvent(null);
     }
   };
@@ -40,7 +40,7 @@ const EventForm = ({ data }: { data: CalendarEventType }) => {
 
   return (
     <Box>
-      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="en-gb">
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <form onSubmit={submitHandler}>
           <FormControl fullWidth>
             <TextField

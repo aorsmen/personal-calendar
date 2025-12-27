@@ -4,22 +4,22 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#1976d2",
-      light: "#63a4ff",
-      dark: "#004ba0",
+      main: "#4479c9",
+      light: "#4e83d3",
+      dark: "#588ddd",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#9c27b0",
-      light: "#d05ce3",
-      dark: "#6a0080",
+      main: "#36485a",
+      light: "#2c3e50",
+      dark: "#223446",
       contrastText: "#ffffff",
     },
     error: {
-      main: "#d32f2f",
+      main: "#c50000",
     },
     warning: {
-      main: "#ed6c02",
+      main: "#fdeda3",
     },
     info: {
       main: "#0288d1",
@@ -68,9 +68,9 @@ export const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          paddingInline: "1.25rem",
-          paddingBlock: "0.5rem",
+          borderRadius: 4,
+          paddingInline: "0.75rem",
+          paddingBlock: "0.25rem",
         },
         containedPrimary: {
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
@@ -108,17 +108,17 @@ export const darkTheme = createTheme({
     },
 
     secondary: {
-      main: "#ce93d8",
-      light: "#f3e5f5",
-      dark: "#ab47bc",
+      main: "#728496",
+      light: "#5e7082",
+      dark: "#4a5c6e",
       contrastText: "#0d1117",
     },
 
     error: {
-      main: "#ef5350",
+      main: "#c50000",
     },
     warning: {
-      main: "#ffb74d",
+      main: "#fdeda3",
     },
     info: {
       main: "#4fc3f7",
