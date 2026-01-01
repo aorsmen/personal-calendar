@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
+export const NOTES_YELLOW = "#fdeda3";
+
 export const lightTheme = createTheme({
   palette: {
     mode: "light",
@@ -19,7 +21,7 @@ export const lightTheme = createTheme({
       main: "#c50000",
     },
     warning: {
-      main: "#fdeda3",
+      main: NOTES_YELLOW,
     },
     info: {
       main: "#0288d1",
@@ -118,7 +120,7 @@ export const darkTheme = createTheme({
       main: "#c50000",
     },
     warning: {
-      main: "#fdeda3",
+      main: NOTES_YELLOW,
     },
     info: {
       main: "#4fc3f7",

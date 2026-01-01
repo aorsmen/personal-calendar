@@ -1,0 +1,27 @@
+{
+  "id": "019b5a65-ca6d-70ab-9c0d-16c88bca4702",
+  "title": "Shopping List 1",
+  "items": [
+    {
+      "id": "019b5a66-03fe-7079-9672-94c21b8d2a14",
+      "text": "List item 1",
+      "isChecked": false
+    },
+    {
+      "id": "019b5a66-29ac-70b0-b95e-ad59cf884450",
+      "text": "List item 2",
+      "isChecked": false
+    },
+    {
+      "id": "019b5a66-8cd9-75db-86bb-753c67fd763c",
+      "text": "List item 3",
+      "isChecked": false
+    },
+    {
+      "id": "019b5a86-5bbb-730b-ab4a-02dcae454507",
+      "text": "List item 4",
+      "isChecked": true
+    }
+  ],
+  "created": "2025-12-05T11:22:00.000Z"
+}
