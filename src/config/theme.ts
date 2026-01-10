@@ -1,18 +1,20 @@
 import { createTheme } from "@mui/material/styles";
 
 export const NOTES_YELLOW = "#fdeda3";
+export const PRIMARY_COLOR = "#4479c9";
+export const SECONDARY_COLOR = "#36485a";
 
 export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#4479c9",
+      main: PRIMARY_COLOR,
       light: "#4e83d3",
       dark: "#588ddd",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#36485a",
+      main: SECONDARY_COLOR,
       light: "#2c3e50",
       dark: "#223446",
       contrastText: "#ffffff",
