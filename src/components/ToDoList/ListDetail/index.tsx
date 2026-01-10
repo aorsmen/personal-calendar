@@ -39,16 +39,29 @@ const ListDetail = ({
   };
 
   const saveItemHandler = (id: string) => {
+    console.log("SAVE ITEM");
     setListDetail((prev) => {
       if (prev) {
         const actItms = prev.items.filter((i) => !i.isChecked);
         const fInx = actItms.findIndex((i) => i.id === id);
+        let hasEmpty = false;
         const updItem = {
           ...prev,
+          items: prev.items.map((i) => {
+            if (i.text === "") {
+              hasEmpty = true;
+            }
+
+            return { ...i };
+          }),
         };
 
-        if (fInx + 1 === actItms.length) {
-          updItem.items.push({ id: v7(), isChecked: false, text: "" });
+        if (!hasEmpty) {
+          updItem.items.splice(fInx + 1, 0, {
+            id: v7(),
+            isChecked: false,
+            text: "",
+          });
         }
 
         return updItem;

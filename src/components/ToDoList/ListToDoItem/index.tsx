@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CloseIcon from "@mui/icons-material/Close";
 import type { ToDoListItemData } from "../../../types/todoList";
 import useToDoList from "../../../hooks/useToDoList";
 
@@ -139,6 +140,15 @@ const ListToDoItem = ({
               inputRef={textRef}
               onChange={(event) => {
                 setItemText(event.currentTarget.value);
+              }}
+              slotProps={{
+                input: {
+                  endAdornment: (
+                    <IconButton onClick={removeItemHandler}>
+                      <CloseIcon />
+                    </IconButton>
+                  ),
+                },
               }}
             />
           </form>
