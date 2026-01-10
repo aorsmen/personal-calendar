@@ -1,14 +1,16 @@
 import { Box } from "@mui/material";
 import CalendarMain from "../../components/Calendar/CalendarMain";
 import CalendarActions from "../../context/CalendarActions";
+import PageHeader from "../../components/UI/PageHeader";
 
 function Calendar() {
   return (
-    <Box sx={{ padding: "16px" }}>
-      <CalendarActions>
+    <CalendarActions>
+      <PageHeader title="Calendar" back="/" />
+      <Box sx={{ padding: "16px" }}>
         <CalendarMain />
-      </CalendarActions>
-    </Box>
+      </Box>
+    </CalendarActions>
   );
 }
 
